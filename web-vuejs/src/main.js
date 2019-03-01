@@ -4,7 +4,7 @@ import VueNativeSock from 'vue-native-websocket'
 
 Vue.config.productionTip = false
 
-Vue.use(VueNativeSock, 'ws://localhost:1880/ws/tweet',
+Vue.use(VueNativeSock, 'ws://localhost:1880/ws/generic',
 {
   format: 'json',
   reconnection: true, // (Boolean) whether to reconnect automatically (false)
