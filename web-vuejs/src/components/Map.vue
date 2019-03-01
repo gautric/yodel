@@ -16,7 +16,7 @@
           <div class="col-xs-6 col-sm-4 col-md-4">
             <div class="card-pf card-pf-accented card-pf-aggregate-status">
               <h2 class="card-pf-title">
-                <span class="mdi mdi-twitter"></span> Tweet
+                <span class="mdi mdi-twitter"/> Tweet
               </h2>
               <div class="card-pf-body">
                 {{tweet}}
@@ -26,7 +26,7 @@
           <div class="col-xs-6 col-sm-4 col-md-4">
             <div class="card-pf card-pf-accented card-pf-aggregate-status">
               <h2 class="card-pf-title">
-                 <span class="mdi mdi-arrow-up-down-bold-outline"></span> Lattitude
+                 <span class="mdi mdi-arrow-up-down-bold-outline"/> Lattitude
               </h2>
               <div class="card-pf-body">
                 {{lattitude}}
@@ -36,7 +36,7 @@
           <div class="col-xs-6 col-sm-4 col-md-4">
             <div class="card-pf card-pf-accented card-pf-aggregate-status">
               <h2 class="card-pf-title">
-                <span class="mdi mdi-arrow-left-right-bold-outline"></span> Longitude
+                <span class="mdi mdi-arrow-left-right-bold-outline"/> Longitude
               </h2>
               <div class="card-pf-body">
                 {{longitude}}
@@ -46,7 +46,7 @@
           <div class="col-xs-6 col-sm-4 col-md-4">
             <div class="card-pf card-pf-accented card-pf-aggregate-status">
               <h2 class="card-pf-title">
-                <span class="mdi mdi-clock-outline"></span> Time
+                <span class="mdi mdi-clock-outline"/> Time
               </h2>
               <div class="card-pf-body">
                 {{time}}
@@ -56,7 +56,7 @@
           <div class="col-xs-6 col-sm-4 col-md-4">
             <div class="card-pf card-pf-accented card-pf-aggregate-status">
               <h2 class="card-pf-title">
-                <span class="mdi mdi-magnify-plus-outline"></span> Zoom
+                <span class="mdi mdi-magnify-plus-outline"/> Zoom
               </h2>
               <div class="card-pf-body">
                 {{zoom}}
@@ -66,7 +66,7 @@
           <div class="col-xs-6 col-sm-4 col-md-4">
             <div class="card-pf card-pf-accented card-pf-aggregate-status">
               <h2 class="card-pf-title">
-                <span class="mdi mdi-counter"></span> Counter
+                <span class="mdi mdi-counter"/> Counter
               </h2>
               <div class="card-pf-body">
                 {{counter}}
@@ -75,10 +75,7 @@
           </div>
         </div>
       </div>
-
-
-
-      </div>
+      
     </div>
   </section>
 
