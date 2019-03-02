@@ -3,6 +3,9 @@
     "description": "A Node-RED Project",
     "version": "0.0.1",
     "private": true,
+    "scripts": {
+      "node-red": "node-red -s config.js"
+    },
     "dependencies": {
         "node-red": "0.19.*"
       }
