@@ -49,7 +49,7 @@
                 <span class="mdi mdi-clock-outline"/> Time
               </h2>
               <div class="card-pf-body">
-                {{time}}
+                {{created_at}}
               </div>
             </div>
           </div>
@@ -125,7 +125,7 @@
           lattitude: this.lat,
           zoom: 12,
           message:'',
-          time:'',
+          created_at:'',
           counter: 0
         }
     },
@@ -141,7 +141,7 @@
         if(data.coordinates.type==='Point') {
           this._leaflet.panTo(new L.LatLng(data.coordinates.coordinates[1], data.coordinates.coordinates[0]));
           this.message = data.payload;
-          this.time = data.created_at;
+          this.created_at = data.created_at;
           this.counter = this.counter+1;
         }
       }
