@@ -16,10 +16,10 @@
           <div class="col-xs-6 col-sm-4 col-md-4">
             <div class="card-pf card-pf-accented card-pf-aggregate-status">
               <h2 class="card-pf-title">
-                <span class="mdi mdi-twitter"/> Tweet
+                <span class="mdi mdi-message-text"/> Message
               </h2>
               <div class="card-pf-body">
-                {{tweet}}
+                {{message}}
               </div>
             </div>
           </div>
@@ -75,7 +75,7 @@
           </div>
         </div>
       </div>
-      
+
     </div>
   </section>
 
@@ -124,7 +124,7 @@
           longitude: this.long,
           lattitude: this.lat,
           zoom: 12,
-          tweet:'',
+          message:'',
           time:'',
           counter: 0
         }
@@ -136,23 +136,19 @@
         this.zoom = this._leaflet.getZoom();
       },
       onmessage: function(event){
-        var tweet = JSON.parse(event.data);
-        console.log(tweet);
-        if(tweet.tweet.coordinates.type==='Point') {
-          this._leaflet.panTo(new L.LatLng(tweet.tweet.coordinates.coordinates[1], tweet.tweet.coordinates.coordinates[0]));
-          this.tweet = tweet.payload;
-          this.time = tweet.tweet.created_at;
+        var data = JSON.parse(event.data);
+        console.log(data);
+        if(data.coordinates.type==='Point') {
+          this._leaflet.panTo(new L.LatLng(data.coordinates.coordinates[1], data.coordinates.coordinates[0]));
+          this.message = data.payload;
+          this.time = data.created_at;
           this.counter = this.counter+1;
         }
-
       }
     },
     computed: {
     }
 }
-
-
-
 </script>
 
 <style scoped lang="scss">
