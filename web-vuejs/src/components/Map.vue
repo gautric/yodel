@@ -103,7 +103,6 @@
 
       this.$options.sockets.onmessage = this.onmessage;
 
-
       this._leaflet = L.map('mapid').setView([this.lat, this.long], this.zoom);
       console.log(process.env);
       L.tileLayer('https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?access_token={accessToken}', {
@@ -126,7 +125,8 @@
           zoom: 12,
           message:'',
           created_at:'',
-          counter: 0
+          counter: 0,
+          _list:[],
         }
     },
     methods: {
@@ -143,6 +143,8 @@
           this.message = data.payload;
           this.created_at = data.created_at;
           this.counter = this.counter+1;
+          var marker = new L.Marker([data.coordinates.coordinates[1], data.coordinates.coordinates[0]]);
+          this._leaflet.addLayer(marker);
         }
       }
     },
