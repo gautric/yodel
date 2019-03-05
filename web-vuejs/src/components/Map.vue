@@ -7,8 +7,7 @@
         <div class="panel-heading">
           <h3 class="panel-title">Map</h3>
         </div>
-        <div class="panel-body" id="mapid">
-        </div>
+        <div class="panel-body" id="mapid"/>
       </div>
 
       <div class="container-fluid container-cards-pf">
@@ -32,7 +31,6 @@
 <script lang="js">
 
   import L from 'leaflet'
-  import Card from './Card.vue'
 
   export default  {
     name: 'Map',
@@ -46,9 +44,7 @@
         required: true
       },
     },
-    components: {
-      Card
-    },
+
     mounted() {
 
   //    this.$options.sockets.onmessage = (event) => console.log(event);

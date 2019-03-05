@@ -2,6 +2,12 @@ import Vue from 'vue'
 import App from './App.vue'
 import VueNativeSock from 'vue-native-websocket'
 
+import Map from './components/Map.vue'
+import Card from './components/Card.vue'
+
+Vue.component('Map', Map);
+Vue.component('Card', Card);
+
 Vue.config.productionTip = false
 
 Vue.use(VueNativeSock, 'ws://localhost:1880/api/ws/generic', {
