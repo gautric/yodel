@@ -10,7 +10,7 @@ Vue.component('Card', Card)
 
 Vue.config.productionTip = false
 
-Vue.use(VueNativeSock, 'ws://localhost:1880/api/ws/generic', {
+Vue.use(VueNativeSock, process.env.VUE_APP_WEBSOCKET_URL, {
   format: 'json',
   reconnection: true, // (Boolean) whether to reconnect automatically (false)
   reconnectionAttempts: 5, // (Number) number of reconnection attempts before giving up (Infinity),
