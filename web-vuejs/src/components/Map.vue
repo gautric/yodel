@@ -13,66 +13,14 @@
 
       <div class="container-fluid container-cards-pf">
         <div class="row row-cards-pf">
-          <div class="col-xs-6 col-sm-4 col-md-4">
-            <div class="card-pf card-pf-accented card-pf-aggregate-status">
-              <h2 class="card-pf-title">
-                <span class="mdi mdi-message-text"/> Message
-              </h2>
-              <div class="card-pf-body">
-                {{message}}
-              </div>
-            </div>
-          </div>
-          <div class="col-xs-6 col-sm-4 col-md-4">
-            <div class="card-pf card-pf-accented card-pf-aggregate-status">
-              <h2 class="card-pf-title">
-                 <span class="mdi mdi-arrow-up-down-bold-outline"/> Lattitude
-              </h2>
-              <div class="card-pf-body">
-                {{lattitude}}
-              </div>
-            </div>
-          </div>
-          <div class="col-xs-6 col-sm-4 col-md-4">
-            <div class="card-pf card-pf-accented card-pf-aggregate-status">
-              <h2 class="card-pf-title">
-                <span class="mdi mdi-arrow-left-right-bold-outline"/> Longitude
-              </h2>
-              <div class="card-pf-body">
-                {{longitude}}
-              </div>
-            </div>
-          </div>
-          <div class="col-xs-6 col-sm-4 col-md-4">
-            <div class="card-pf card-pf-accented card-pf-aggregate-status">
-              <h2 class="card-pf-title">
-                <span class="mdi mdi-clock-outline"/> Time
-              </h2>
-              <div class="card-pf-body">
-                {{created_at}}
-              </div>
-            </div>
-          </div>
-          <div class="col-xs-6 col-sm-4 col-md-4">
-            <div class="card-pf card-pf-accented card-pf-aggregate-status">
-              <h2 class="card-pf-title">
-                <span class="mdi mdi-magnify-plus-outline"/> Zoom
-              </h2>
-              <div class="card-pf-body">
-                {{zoom}}
-              </div>
-            </div>
-          </div>
-          <div class="col-xs-6 col-sm-4 col-md-4">
-            <div class="card-pf card-pf-accented card-pf-aggregate-status">
-              <h2 class="card-pf-title">
-                <span class="mdi mdi-counter"/> Counter
-              </h2>
-              <div class="card-pf-body">
-                {{counter}}
-              </div>
-            </div>
-          </div>
+
+          <Card title="Message" icon="mdi-message-text" :message="message"/>
+          <Card title="Lattitude" icon="mdi-arrow-up-down-bold-outline" :message="lattitude"/>
+          <Card title="Longitude" icon="mdi-arrow-left-right-bold-outline" :message="longitude"/>
+          <Card title="Time" icon="mdi-clock-outline" :message="created_at"/>
+          <Card title="Zoom" icon="mdi-magnify-plus-outline" :message="zoom"/>
+          <Card title="Counter" icon="mdi-counter" :message="counter"/>
+
         </div>
       </div>
 
@@ -84,6 +32,7 @@
 <script lang="js">
 
   import L from 'leaflet'
+  import Card from './Card.vue'
 
   export default  {
     name: 'Map',
@@ -96,6 +45,9 @@
         type: String,
         required: true
       },
+    },
+    components: {
+      Card
     },
     mounted() {
 
