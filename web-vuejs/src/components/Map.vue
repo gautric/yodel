@@ -97,6 +97,7 @@ export default {
         var geoJSON = {
           'type': 'Feature',
           'properties': {
+            'name': data.type, 
             'text': data.payload
           },
           'geometry': data.coordinates
