@@ -13,12 +13,13 @@
       <div class="container-fluid container-cards-pf">
         <div class="row row-cards-pf">
 
-          <Card title="Message" icon="mdi-message-text" :message="message"/>
-          <Card title="Lattitude" icon="mdi-arrow-up-down-bold-outline" :message="lattitude"/>
-          <Card title="Longitude" icon="mdi-arrow-left-right-bold-outline" :message="longitude"/>
-          <Card title="Time" icon="mdi-clock-outline" :message="created_at"/>
-          <Card title="Zoom" icon="mdi-magnify-plus-outline" :message="zoom"/>
-          <Card title="Counter" icon="mdi-counter" :message="counter"/>
+          <Card title="Message" icon="mdi-message-text" :text="info.payload"/>
+          <Card title="Lattitude" icon="mdi-arrow-up-down-bold-outline" :text="lattitude"/>
+          <Card title="Longitude" icon="mdi-arrow-left-right-bold-outline" :text="longitude"/>
+          <Card title="Time" icon="mdi-clock-outline" :text="info.created_at"/>
+          <Card title="Zoom" icon="mdi-magnify-plus-outline" :text="zoom"/>
+          <Card title="Counter" icon="mdi-counter" :text="counter"/>
+          <Card title="Lan" icon="mdi-flag" :text="info.lang"/>
 
         </div>
       </div>
@@ -71,9 +72,12 @@
           longitude: this.long,
           lattitude: this.lat,
           zoom: 12,
-          message:'',
-          created_at:'',
           counter: 0,
+          info: {
+            "payload": "",
+            "lang": "",
+            "created_at": ""
+          },
           _list:[],
         }
     },
@@ -85,14 +89,17 @@
       },
       onmessage: function(event){
         var data = JSON.parse(event.data);
-        console.log(data);
         if(data.coordinates.type==='Point') {
-          this._leaflet.panTo(new L.LatLng(data.coordinates.coordinates[1], data.coordinates.coordinates[0]));
-          this.message = data.payload;
-          this.created_at = data.created_at;
-          this.counter = this.counter+1;
-          var marker = new L.Marker([data.coordinates.coordinates[1], data.coordinates.coordinates[0]]);
+
+          var position = new L.LatLng(data.coordinates.coordinates[1], data.coordinates.coordinates[0]);
+          var marker = new L.Marker(position);
+          this._leaflet.panTo(position);
           this._leaflet.addLayer(marker);
+
+          this.info = data;
+          this.longitude = data.coordinates.coordinates[1];
+          this.lattitude = data.coordinates.coordinates[0];
+          this.counter = this.counter + 1;
         }
       }
     },
@@ -108,6 +115,6 @@
     margin-right: auto
   }
 
-  #mapid { height: 550px; }
+  #mapid { height: 560px; }
 
 </style>
