@@ -7,7 +7,7 @@
           <span  class="mdi" :class="icon"/> {{title}}
         </h2>
         <div class="card-pf-body">
-          {{message}}
+          {{text}}
         </div>
       </div>
     </div>
@@ -21,7 +21,7 @@
     props: [
       'icon',
       'title',
-      'message'
+      'text'
     ],
 }
 </script>
